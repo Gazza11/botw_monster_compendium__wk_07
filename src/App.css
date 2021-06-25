@@ -1,5 +1,32 @@
 .App {
   text-align: center;
+  font-family: The Wild Breath Of Zelda, Menlo, Monaco, 'Courier New', monospace;
+}
+
+body {
+  background-image: url(./static/img/zelda\ header\ vertical.png);
+  color:gold;
+}
+
+body p {
+  font-size: 35px;
+}
+
+body ul {
+  font-size: 40px;
+}
+
+.header h1 {
+  font-size: 80px;
+  color:gold;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.header h3 {
+  color: gold;
+  margin-top: 20px;
+  font-size: 32px;
 }
 
 .capitalise {
@@ -11,7 +38,11 @@
   justify-content: space-around;
 }
 
+.main-container li {
+  list-style: none;
+}
+
 .monster-detail-hidden {
   /* display: none; */
-  right:-2000px;
+  /* right:-2000px; */
 }

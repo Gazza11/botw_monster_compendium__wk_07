@@ -1,7 +1,8 @@
 const Header = () => {
     return(
-        <div>
-            <h1 className='capitalise'>header placeholder</h1>
+        <div className='header' >
+            <h1>Zelda : Breath of the Wild</h1>
+            <h3>Monster Compendium</h3>
         </div>
     )
 }
