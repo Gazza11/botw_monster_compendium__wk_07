@@ -22,14 +22,13 @@ const MonsterContainer = () => {
         setSelectedMosnter(monster)
     }
 
+
     return(
-        <div className='main-container'>
-            <div>
+        <div>
             <Header />
+            <div className='main-container'>
             <MonsterList monsters={monsters} onMonsterClick={onMonsterClick}/>
-            </div>
-            <div>
-            <MonsterDetail selectedMonster={selectedMonster}/>
+            {selectedMonster ? <MonsterDetail selectedMonster={selectedMonster} /> : null}
             </div>
         </div>
         
