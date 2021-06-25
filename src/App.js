@@ -3,7 +3,8 @@ import MonsterContainer from './container/MonsterContainer';
 
 function App() {
   return (
-    <div class='App'>
+    <div className='App'>
+      
       <MonsterContainer />
     </div>
   );

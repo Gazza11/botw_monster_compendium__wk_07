@@ -1,6 +1,14 @@
-const ListItem = () => {
+const ListItem = ({monster}) => {
     return(
-        <h1>ListItem</h1>
+        <li>
+            <div>
+            <h2>{monster.name}</h2>
+            <p>Commonly found at: {monster.common_locations}</p>
+            </div>
+            <div>
+                <img src={monster.image}></img>
+            </div>
+        </li>
     )
 }
 
