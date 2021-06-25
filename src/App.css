@@ -1,8 +1,12 @@
 .App {
   text-align: center;
-  display:flex;
 }
 
 .capitalise {
   text-transform: capitalize;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-around;
 }

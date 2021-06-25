@@ -6,6 +6,7 @@ import Header from '../component/Header';
 const MonsterContainer = () => {
 
     const [monsters, setMonsters] = useState([])
+    const [selectedMonster, setSelectedMosnter] = useState({})
 
     useEffect(() => {
         getMonsters()
@@ -17,12 +18,19 @@ const MonsterContainer = () => {
         .then(monsters => setMonsters(monsters.data.monsters))
     }
 
-    console.log(monsters)
+    const onMonsterClick = function (monster){
+        setSelectedMosnter(monster)
+    }
+
     return(
-        <div>
+        <div className='main-container'>
+            <div>
             <Header />
-            <MonsterList monsters={monsters}/>  
-            <MonsterDetail />
+            <MonsterList monsters={monsters} onMonsterClick={onMonsterClick}/>
+            </div>
+            <div>
+            <MonsterDetail selectedMonster={selectedMonster}/>
+            </div>
         </div>
         
     )
