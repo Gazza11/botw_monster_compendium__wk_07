@@ -1,6 +1,6 @@
 const MonsterDetail = ({selectedMonster}) => {
     return(
-        <div>
+        <div className='fixed-ct'>
             <h2>Monster Details</h2>
             <h3 className='capitalise'>{selectedMonster.name}</h3>
             <p>{selectedMonster.description}</p>

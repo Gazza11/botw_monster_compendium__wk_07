@@ -24,7 +24,7 @@ const MonsterContainer = () => {
 
 
     return(
-        <div>
+        <div className='like-body'>
             <Header />
             <div className='main-container'>
             <MonsterList monsters={monsters} onMonsterClick={onMonsterClick}/>
