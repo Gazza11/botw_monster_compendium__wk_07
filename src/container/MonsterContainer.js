@@ -6,7 +6,7 @@ import Header from '../component/Header';
 const MonsterContainer = () => {
 
     const [monsters, setMonsters] = useState([])
-    const [selectedMonster, setSelectedMosnter] = useState({})
+    const [selectedMonster, setSelectedMosnter] = useState(null)
 
     useEffect(() => {
         getMonsters()
