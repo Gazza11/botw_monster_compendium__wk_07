@@ -20,6 +20,9 @@ const MonsterContainer = () => {
 
     const onMonsterClick = function (monster){
         setSelectedMosnter(monster)
+        if (selectedMonster === monster) {
+            setSelectedMosnter(null)
+        }
     }
 
 
