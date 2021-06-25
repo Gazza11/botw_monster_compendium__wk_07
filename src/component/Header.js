@@ -1,7 +1,9 @@
+import "../App.css";
+
 const Header = () => {
     return(
         <div>
-            <h1>Header PlaceHolder</h1>
+            <h1 className='capitalise'>header placeholder</h1>
         </div>
     )
 }
