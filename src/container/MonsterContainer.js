@@ -39,10 +39,17 @@ const MonsterContainer = () => {
     }
 
     const filterLoc = (searchTermLoc) => {
-        const filteredMonsters = monsters.filter((monster) => {
-            return monster.common_locations.indexOf(searchTermLoc) > -1
+        setFilteredMonsters(monsters)
+        const prepareSearchLoc = monsters.filter((monster) => {
+            return monster.common_locations !== null
         })
-        setFilteredMonsters(filteredMonsters)
+        const filteredMonstersLoc = prepareSearchLoc.filter((monster) => {
+            return monster.common_locations.indexOf(searchTermLoc) > -1
+            })
+
+
+        setFilteredMonsters(filteredMonstersLoc)
+        console.log(filteredMonstersLoc)
     }
 
     return(

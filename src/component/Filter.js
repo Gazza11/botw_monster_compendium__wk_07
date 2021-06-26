@@ -32,11 +32,16 @@ const Filter = ({filter, filterLoc}) => {
 
     return(
         <div className='form-container'>
-            <select onChange={changeSearchTerm}>
+            <select onChange={changeSearchTermLoc} >
                 <option value=''>Select a region to filter by</option>
                 <option value='Hyrule Field'>Hyrule Field</option>
-                <option value='East Necula'>East Necula</option>
+                <option value='West Necluda'>West Necluda</option>
+                <option value='East Necluda'>East Necluda</option>
                 <option value='Divine Beast'>Divine Beasts</option>
+                <option value='Gerudo Highlands'>Gerudo Highlands</option>
+                <option value='Eldin Canyon'>Eldin Canyon</option>
+                <option value='Deep Akkala'>Deep Akkala</option>
+                <option value='Tabatha Frontier'>Tabatha Frontier</option>
             </select>
             <form onSubmit={handleSubmit}>
                 <input type='text' name='search' placeholder='Filter by Name' onChange={changeSearchTerm}></input>
