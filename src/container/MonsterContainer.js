@@ -8,7 +8,7 @@ const MonsterContainer = () => {
 
     const [monsters, setMonsters] = useState([])
     const [selectedMonster, setSelectedMonster] = useState(null)
-    const [filteredMonsters, setFilteredMonsters] = useState(null)
+    const [filteredMonsters, setFilteredMonsters] = useState([])
 
     useEffect(() => {
         getMonsters()
@@ -18,8 +18,8 @@ const MonsterContainer = () => {
         fetch('https://botw-compendium.herokuapp.com/api/v1')
         .then(result => result.json())
         .then(monsters => {
-            setMonsters(monsters.data.monsters)
             setFilteredMonsters(monsters.data.monsters)
+            setMonsters(monsters.data.monsters)
                     })
     }
 
@@ -31,21 +31,24 @@ const MonsterContainer = () => {
     }
 
     const filter = (searchTerm) => {
-        const prepareSearch = searchTerm
-        console.log(prepareSearch)
+        const prepareSearch = searchTerm.toLowerCase()
         const filteredMonsters = monsters.filter((monster) => {
-            // console.log('Monster', monster.name)
             return monster.name.indexOf(prepareSearch) > -1
         })
         setFilteredMonsters(filteredMonsters)
-        console.log(filteredMonsters)
+    }
 
+    const filterLoc = (searchTermLoc) => {
+        const filteredMonsters = monsters.filter((monster) => {
+            return monster.common_locations.indexOf(searchTermLoc) > -1
+        })
+        setFilteredMonsters(filteredMonsters)
     }
 
     return(
         <div className='like-body'>
             <Header />
-            <Filter filter={filter}/>
+            <Filter filter={filter} filterLoc={filterLoc}/>
             <div className='main-container'>
             <MonsterList monsters={filteredMonsters} onMonsterClick={onMonsterClick}/>
             {selectedMonster ? <MonsterDetail selectedMonster={selectedMonster} /> : null}
