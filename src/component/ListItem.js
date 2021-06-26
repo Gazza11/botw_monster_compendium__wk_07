@@ -6,7 +6,7 @@ const ListItem = ({monster, onMonsterClick}) => {
     return(
         <li>
             <div>
-            <h2 onClick={handleClick} className='capitalise'>{monster.name}</h2>
+            <h2 onClick={handleClick} className='capitalise' className='list-item-header'><a>{monster.name}</a></h2>
             <p>Commonly found at: 
                 {monster.common_locations ? monster.common_locations.map(location => (
                     <p>{location}</p>
