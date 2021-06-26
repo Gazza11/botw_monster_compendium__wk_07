@@ -41,6 +41,12 @@ body ul {
   display: inline-block;
   border-radius: 6px;
 }
+
+.filter-bar {
+  position: sticky;
+  height:20px;
+  top:10px;
+}
 .capitalise {
   text-transform: capitalize;
 }
@@ -53,13 +59,6 @@ body ul {
 .main-container li {
   list-style: none;
 }
-
-/* .fixedElement {
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:100;
-} */
 
 .main-container {
   position:relative;

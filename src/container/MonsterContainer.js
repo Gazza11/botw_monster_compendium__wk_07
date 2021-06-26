@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import MonsterList from "../component/MonsterList";
 import MonsterDetail from "../component/MonsterDetail";
 import Header from '../component/Header';
+import Filter from '../component/Filter';
 
 const MonsterContainer = () => {
 
@@ -29,6 +30,7 @@ const MonsterContainer = () => {
     return(
         <div className='like-body'>
             <Header />
+            <Filter />
             <div className='main-container'>
             <MonsterList monsters={monsters} onMonsterClick={onMonsterClick}/>
             {selectedMonster ? <MonsterDetail selectedMonster={selectedMonster} /> : null}
