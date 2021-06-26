@@ -42,10 +42,14 @@ body ul {
   border-radius: 6px;
 }
 
-.filter-bar {
+.form-container {
   position: sticky;
   height:20px;
   top:10px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: aqua;
 }
 .capitalise {
   text-transform: capitalize;
