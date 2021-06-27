@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react"
 
-const Filter = ({filter, filterLoc}) => {
+const Filter = ({filter, filterLoc, reset}) => {
 
     const [searchTerm, setSearchTerm] = useState("")
     const [searchTermLoc, setSearchTermLoc] = useState("")
@@ -29,10 +29,16 @@ const Filter = ({filter, filterLoc}) => {
         event.preventDefault()
     }
 
+    const handleReset = () => {
+        reset()
+    }
 
     return(
         <div className='form-container'>
-            <select onChange={changeSearchTermLoc} >
+            <div>
+                <button onClick={handleReset}>Reset Search</button>
+            </div>
+            <select onChange={changeSearchTermLoc} id='search-by-loc'>
                 <option value=''>Select a region to filter by</option>
                 <option value='Hyrule Field'>Hyrule Field</option>
                 <option value='West Necluda'>West Necluda</option>
@@ -41,9 +47,9 @@ const Filter = ({filter, filterLoc}) => {
                 <option value='Gerudo Highlands'>Gerudo Highlands</option>
                 <option value='Eldin Canyon'>Eldin Canyon</option>
                 <option value='Deep Akkala'>Deep Akkala</option>
-                <option value='Tabatha Frontier'>Tabatha Frontier</option>
+                <option value='Tabantha Frontier'>Tabantha Frontier</option>
             </select>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} id='search-by-text'>
                 <input type='text' name='search' placeholder='Filter by Name' onChange={changeSearchTerm}></input>
             </form>
             </div>

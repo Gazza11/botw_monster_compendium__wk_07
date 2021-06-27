@@ -35,6 +35,7 @@ const MonsterContainer = () => {
         const filteredMonsters = monsters.filter((monster) => {
             return monster.name.indexOf(prepareSearch) > -1
         })
+        
         setFilteredMonsters(filteredMonsters)
     }
 
@@ -43,19 +44,24 @@ const MonsterContainer = () => {
         const prepareSearchLoc = monsters.filter((monster) => {
             return monster.common_locations !== null
         })
-        const filteredMonstersLoc = prepareSearchLoc.filter((monster) => {
+        let filteredMonstersLoc = prepareSearchLoc.filter((monster) => {
             return monster.common_locations.indexOf(searchTermLoc) > -1
             })
-
-
         setFilteredMonsters(filteredMonstersLoc)
-        console.log(filteredMonstersLoc)
+    }
+
+    const reset = () => {
+        setFilteredMonsters(monsters)
+        document.getElementById("search-by-text").reset()
+        document.getElementById("search-by-loc").selectedIndex = "0"
+
+        
     }
 
     return(
         <div className='like-body'>
             <Header />
-            <Filter filter={filter} filterLoc={filterLoc}/>
+            <Filter filter={filter} filterLoc={filterLoc} reset={reset}/>
             <div className='main-container'>
             <MonsterList monsters={filteredMonsters} onMonsterClick={onMonsterClick}/>
             {selectedMonster ? <MonsterDetail selectedMonster={selectedMonster} /> : null}

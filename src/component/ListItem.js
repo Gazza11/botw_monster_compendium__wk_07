@@ -13,7 +13,7 @@ const ListItem = ({monster, onMonsterClick}) => {
                 )): null}</p>
             </div>
             <div>
-                <img src={monster.image} alt='Missing Image'></img>
+                <img src={monster.image} alt='Missing Image' loading='lazy'></img>
             </div>
         </li>
     )
