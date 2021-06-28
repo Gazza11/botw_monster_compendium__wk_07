@@ -56,11 +56,6 @@ const MonsterContainer = () => {
         document.getElementById("search-by-loc").selectedIndex = "0"
 
 
-
-        // example
-
-        
-        
     }
 
     return(
